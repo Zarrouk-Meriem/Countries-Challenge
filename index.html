@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries_Switcher</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <body >
+    <div class="header">
+      <p class="where-text">Where in the world?</p>
+      <button class="mode-btn">
+        <ion-icon class="mode-icon dark-icon" name="moon-outline"></ion-icon>
+        <p class="mode-text">Light mode</p>
+      </button>
+    </div>
+    <div class="container">
+      <div class="search-section">
+        <div class="search-bar">
+          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+          <input placeholder="Search for a country..." type="text" />
+        </div>
+        <div class="filter-bar">
+          <p class="filter">Filter by Region<ion-icon class="down-icon" name="chevron-down-outline"></ion-icon></p>
+          <div class="options hidden">
+              <p class="option">Africa</p>
+              <p class="option">America</p>
+              <p class="option">Asia</p>
+              <p class="option">Europe</p>
+              <p class="option">Oceania</p>
+          </div>
+        </div>
+      </div>
+      <div class="countries-container filtered">
+          <div class="country-container">
+            <img src="" alt="" />
+            <div class="infos-container">
+              <p class="country-name"><b>Germany</b></p>
+              <div class="infos">
+                <p class="info">
+                  <p><b>Population: </b>56,544,300</p>
+                </p>
+                <p class="info">
+                  <p><b>Region: </b>Europe</p>
+                </p>
+                <p class="info">
+                  <p><b>Capital: </b>Berlin</p>
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
