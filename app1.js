@@ -25,6 +25,7 @@ async function displayCountryInfo(country) {
       throw new Error(`HTTP error: ${response.status}`);
     }
     const [data] = await response.json();
+    console.log(data);
     // Language
     const languages = data.languages;
 
@@ -108,7 +109,7 @@ displayCountryInfo(country);
 
 async function displayCountryByName(name) {
   try {
-    const url = `https://restcountries.com/v3.1/name/${name}`;
+    const url = `https://restcountries.com/v3.1/${name}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
@@ -120,12 +121,12 @@ async function displayCountryByName(name) {
   }
 }
 async function getBordersName(country) {
-  const c = await displayCountryByName(`${country}`);
+  const c = await displayCountryByName(`name/${country}`);
   const bordersNames = [];
   const borders = c.borders;
   if (borders) {
     for (let i = 0; i < borders.length; i++) {
-      c.borders[i] = await displayCountryByName(c.borders[i]);
+      c.borders[i] = await displayCountryByName(`alpha/${c.borders[i]}`);
       bordersNames[i] = c.borders[i]?.name?.common;
     }
   } else bordersNames[0] = "No border countries";
